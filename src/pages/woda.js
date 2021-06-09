@@ -15,7 +15,7 @@ import {Ustawienia_woda_pv, UstawieniaWodaHist} from '../Components/UstawieniaWr
 
 export default function Woda(){
 
-    const { tryb_pracy, woda_pv, woda_his, woda_switch } = useSelector(selectParams);
+    const { tryb_pracy, woda_pv, woda_czas, woda_switch } = useSelector(selectParams);
     const [ switch1, setSwitch1 ] = useState(woda_switch);
 
     useEffect(() => {
@@ -36,11 +36,11 @@ export default function Woda(){
           <div className="zakladki-wrap">
             <div className="row">
 
-              <Zakladka nazwa="Wartość zadana" wartosc={woda_pv}>
+              <Zakladka nazwa="Wartość zadana" wartosc={woda_pv ? woda_pv : "Błąd parametru"}>
                 <p>Ustalony poziom wilgotności gleby</p>
                 <UstawieniaPrzycisk tytul="Zmiana wartości zadanej wilgotności gleby" komponent={<Ustawienia_woda_pv />} />
               </Zakladka>
-              <Zakladka nazwa="Czas pracy pompy" wartosc={woda_his}>
+              <Zakladka nazwa="Czas pracy pompy" wartosc={woda_czas ? woda_czas : "Błąd parametru"}>
                 <p>Czas określony w sekundach, jak długo ma działać pompa</p>
                 <UstawieniaPrzycisk tytul="Zmiana histerezy" komponent={<UstawieniaWodaHist />} />
               </Zakladka>
