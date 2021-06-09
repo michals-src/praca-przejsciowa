@@ -40,8 +40,8 @@ export default function Woda(){
                 <p>Ustalony poziom wilgotności gleby</p>
                 <UstawieniaPrzycisk tytul="Zmiana wartości zadanej wilgotności gleby" komponent={<Ustawienia_woda_pv />} />
               </Zakladka>
-              <Zakladka nazwa="Histereza" wartosc={woda_his}>
-                <p>Zakres wahań wokół wartości zadanej</p>
+              <Zakladka nazwa="Czas pracy pompy" wartosc={woda_his}>
+                <p>Czas określony w sekundach, jak długo ma działać pompa</p>
                 <UstawieniaPrzycisk tytul="Zmiana histerezy" komponent={<UstawieniaWodaHist />} />
               </Zakladka>
               <Zakladka nazwa="Włączenie pompy">

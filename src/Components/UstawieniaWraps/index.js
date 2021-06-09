@@ -6,6 +6,8 @@ import 'firebase/database';
 import { useSelector } from 'react-redux';
 import { selectParams } from '../../parametry/parametrySlice';
 
+//9AFD8AAE-10BD-46B0-BEE3-E570606B8FBD
+
 const UstawieniaTrybPracy = ({ tryb_pracy }) => {
 
     const [ value, setValue ] = useState(tryb_pracy === "Auto");
@@ -84,9 +86,9 @@ const UstawieniaWodaHist = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if( HIS < 0 || HIS > 100) return;
+        if( HIS < 0 || HIS > 60) return;
 
-        firebase.database().ref('/woda_his').set(Number(HIS), (err) => {
+        firebase.database().ref('/woda_czas').set(Number(HIS), (err) => {
             if( err !== null ) console.log(err);
         });
     }
@@ -96,10 +98,10 @@ const UstawieniaWodaHist = () => {
             <div className="col offset-2">
             <div className="mt-4">
                 <span className="h5 mr-2"><div className="badge bg-warning">{woda_his}</div></span>
-                <p className="my-0"> Aktualna wartość histerezy</p>
+                <p className="my-0"> Aktualna wartość czasu pracy pompu [s]</p>
             </div>
             <div className="mt-3 d-flex flex-column">
-                <p>Wpisz nową wartość zadaną (0-100 [%])</p>
+                <p>Wpisz nową wartość zadaną (0-60 [s])</p>
                 <form onSubmit={handleSubmit}>
                     <input className="form-control form-control-lg" type="text" id="flexSwitchCheckDefault" value={HIS} onChange={(e) => setHIS(e.target.value)} />
                     <div className="mt-2">
@@ -133,7 +135,7 @@ const UstawieniaSwiatloPV = () => {
             <div className="col offset-2">
             <div className="mt-4">
                 <span className="h5 mr-2"><div className="badge bg-warning">{ swiatlo_pv }</div></span>
-                <p className="my-0"> Aktualna wartośc zadana wilgotności gleby</p>
+                <p className="my-0"> Aktualna ustalona wartość włączenia oświetlenia</p>
             </div>
             <div className="mt-3 d-flex flex-column">
                 <p>Wpisz nową wartość zadaną (0-1000)</p>
