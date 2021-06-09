@@ -4,7 +4,7 @@ const initialState = {
     tryb_pracy: true,
     woda_pv: 0,
     woda_cv: 0,
-    woda_his: 0,
+    woda_czas: 0,
     woda_switch: false,
     swiatlo_pv: 0,
     swiatlo_cv: 0,

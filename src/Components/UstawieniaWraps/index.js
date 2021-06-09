@@ -79,8 +79,8 @@ const Ustawienia_woda_pv = () => {
 
 const UstawieniaWodaHist = () => {
 
-    const { woda_his } = useSelector(selectParams);
-    const [ HIS, setHIS ] = useState(woda_his);
+    const { woda_czas } = useSelector(selectParams);
+    const [ HIS, setHIS ] = useState(woda_czas);
     
 
     const handleSubmit = (e) => {
@@ -97,7 +97,7 @@ const UstawieniaWodaHist = () => {
         <div className="row">
             <div className="col offset-2">
             <div className="mt-4">
-                <span className="h5 mr-2"><div className="badge bg-warning">{woda_his}</div></span>
+                <span className="h5 mr-2"><div className="badge bg-warning">{woda_czas}</div></span>
                 <p className="my-0"> Aktualna wartość czasu pracy pompu [s]</p>
             </div>
             <div className="mt-3 d-flex flex-column">
