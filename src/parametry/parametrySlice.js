@@ -18,12 +18,12 @@ export const parametrySlice = createSlice({
         zapisz: (state, action) => {
             let newState = action.payload;
 
-            return {...state, ...newState };
+            return { ...state, ...newState };
         },
     },
 });
 
-export const {zapisz} = parametrySlice.actions;
+export const { zapisz } = parametrySlice.actions;
 export const selectParams = (state) => {
     return state.parametry;
 }
